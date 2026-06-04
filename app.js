@@ -44,9 +44,11 @@ const elPagination    = document.getElementById('pagination');
 const elCategoryFilter= document.getElementById('categoryFilter');
 const btnQuiz         = document.getElementById('btnQuiz');
 const btnBrowse       = document.getElementById('btnBrowse');
+const elYear         = document.getElementById('currentYear');
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 async function init() {
+  if (elYear) elYear.textContent = new Date().getFullYear();
   showSection('loading');
   try {
     const res = await fetch('./data/questions.json');
